@@ -13,7 +13,6 @@ A branch-based document management system with full-text search (Elasticsearch +
 - [Setup — Frontend](#setup--frontend)
 - [Environment Variables](#environment-variables)
 - [Database Migrations](#database-migrations)
-- [Removing Test / Registered Users Before First Push](#removing-test--registered-users-before-first-push)
 - [What to Put in .gitignore](#what-to-put-in-gitignore)
 - [Creating the GitHub Repository](#creating-the-github-repository)
 - [API Endpoints](#api-endpoints)
@@ -179,57 +178,6 @@ The `AccessRequest` model (added for cross-branch access requests) requires a mi
 
 ---
 
-## Removing Test / Registered Users Before First Push
-
-If you used your local dev environment to test the app, you likely have dummy user accounts and uploaded test documents in the database and `media/` folder. **Clean these out before your first push** so the repo starts with a clean slate.
-
-### Step 1 — Open the script and configure it
-
-Open `backend/scripts/remove_registered_users.py` and add any real accounts you want to **keep** to the `KEEP_USERNAMES` set:
-
-```python
-KEEP_USERNAMES = {
-    "admin",       # keep your superuser
-    "yourname",    # keep any real account
-}
-```
-
-Leave it empty `{}` to delete **all** users.
-
-### Step 2 — Run the script
-
-With your virtual environment active:
-
-```bash
-cd backend
-python manage.py shell < scripts/remove_registered_users.py
-```
-
-The script will:
-1. List every user it plans to delete and how many documents they own.
-2. Ask you to type `YES` to confirm.
-3. Delete the physical files from `media/documents/`.
-4. Remove the corresponding Elasticsearch index entries.
-5. Delete the database rows (users + documents + access requests cascade automatically).
-
-### Step 3 — Verify
-
-```bash
-python manage.py shell -c "from core.models import User, Document; print(User.objects.count(), 'users,', Document.objects.count(), 'docs')"
-```
-
-Should print `0 users, 0 docs` (or however many you kept).
-
-### Step 4 — Clear the media folder manually if needed
-
-The script removes files for documents it knows about. If you have orphaned files in `media/`, remove them manually:
-
-```bash
-rm -rf backend/media/documents/*
-```
-
----
-
 ## What to Put in .gitignore
 
 ### Backend (`backend/.gitignore`)
@@ -358,7 +306,7 @@ Before running `git push` for the first time:
 - [ ] `media/` folder is empty or gitignored
 - [ ] `db.sqlite3` is gitignored
 - [ ] `.env` files are gitignored (only `.env.example` files are committed)
-- [ ] Test users and documents have been removed (see section above)
+- [ ] `SECRET_KEY` and passwords are NOT hardcoded anywhere in committed files
 - [ ] `SECRET_KEY` and passwords are NOT hardcoded anywhere in committed files
 - [ ] `requirements.txt` is up to date: `pip freeze > requirements.txt`
 - [ ] `package.json` reflects correct dependencies
