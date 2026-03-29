@@ -548,4 +548,4 @@ Set alerts for: queue depth > 1000 tasks, ES cluster status yellow/red, Django p
 | Stage 3 | ~10 TB, enterprise load | Kubernetes, dedicated OCR workers, presigned uploads |
 | Stage 4 | 100 TB+, massive scale | ES ILM tiering, CDN for previews, GPU OCR, multi-region |
 
-Each stage is independently deployable — you don't need to do everything at once. Start with PostgreSQL + S3 + Celery (Stage 1) and the rest can follow as load demands it.
+
