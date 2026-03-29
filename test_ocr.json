@@ -1,0 +1,105 @@
+{
+  "full_text": "Hello World.\nUsing Tesseract.'s OCR.\nFrom sromake.",
+  "lines": [
+    "Hello World.",
+    "Using Tesseract.'s OCR.",
+    "From sromake."
+  ],
+  "image_type": "table",
+  "psm_used": 6,
+  "avg_confidence": 0.8514,
+  "word_count": 7,
+  "processing_time_ms": 605.1,
+  "image_path": "C:\\Users\\abhij\\OneDrive\\Desktop\\project mamaji\\search engine\\test.jpg",
+  "image_shape": [
+    183,
+    569,
+    3
+  ],
+  "words": [
+    {
+      "text": "Hello",
+      "confidence": 0.96,
+      "bbox": [
+        25,
+        29,
+        140,
+        54
+      ],
+      "line_num": 1,
+      "block_num": 1
+    },
+    {
+      "text": "World.",
+      "confidence": 0.95,
+      "bbox": [
+        167,
+        29,
+        302,
+        54
+      ],
+      "line_num": 1,
+      "block_num": 1
+    },
+    {
+      "text": "Using",
+      "confidence": 0.92,
+      "bbox": [
+        24,
+        74,
+        141,
+        108
+      ],
+      "line_num": 2,
+      "block_num": 1
+    },
+    {
+      "text": "Tesseract.'s",
+      "confidence": 0.47,
+      "bbox": [
+        167,
+        75,
+        431,
+        103
+      ],
+      "line_num": 2,
+      "block_num": 1
+    },
+    {
+      "text": "OCR.",
+      "confidence": 0.96,
+      "bbox": [
+        457,
+        77,
+        542,
+        100
+      ],
+      "line_num": 2,
+      "block_num": 1
+    },
+    {
+      "text": "From",
+      "confidence": 0.93,
+      "bbox": [
+        26,
+        123,
+        119,
+        146
+      ],
+      "line_num": 3,
+      "block_num": 1
+    },
+    {
+      "text": "sromake.",
+      "confidence": 0.77,
+      "bbox": [
+        143,
+        121,
+        326,
+        149
+      ],
+      "line_num": 3,
+      "block_num": 1
+    }
+  ]
+}

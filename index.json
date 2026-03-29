@@ -1,0 +1,26 @@
+{
+    "apple": [
+        "doc1.txt"
+    ],
+    "mange": [
+        "doc1.txt"
+    ],
+    "bannana": [
+        "doc1.txt"
+    ],
+    "machine": [
+        "doc2.txt"
+    ],
+    "learning": [
+        "doc2.txt"
+    ],
+    "stanford": [
+        "doc2.txt"
+    ],
+    "smart": [
+        "doc3.txt"
+    ],
+    "beautiful": [
+        "doc3.txt"
+    ]
+}
